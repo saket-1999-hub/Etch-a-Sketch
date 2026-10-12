@@ -15,7 +15,10 @@ h1 {
 
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 14px;
 }
 
 .container {
@@ -29,4 +32,12 @@ main {
 
 .active {
   background-color: black;
+}
+
+.btn {
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
 }
