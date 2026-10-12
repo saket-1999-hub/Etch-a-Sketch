@@ -24,7 +24,7 @@ function createGrid(number) {
   }
 }
 
-createGrid(100);
+createGrid(16);
 
 const boxes = document.querySelectorAll(".items");
 
