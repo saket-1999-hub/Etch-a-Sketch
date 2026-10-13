@@ -34,12 +34,8 @@ createGrid(16);
 const resizeBtn = document.querySelector(".btn-grid-size");
 
 function draw() {
-  console.log("is this code working here ?");
-
   boxes.forEach((box) => {
-    console.log("is this code working here ?");
     box.addEventListener("mouseenter", (e) => {
-      console.log(`this is the ${e}`);
       e.target.classList.add("active");
     });
   });
