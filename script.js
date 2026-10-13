@@ -44,10 +44,12 @@ function draw() {
 draw();
 
 resizeBtn.addEventListener("click", (e) => {
-  const size = Number(prompt("Please enter how many boxes do you want ? :"));
+  const size = Number(prompt("Please enter grid size (upto 100) :"));
 
-  container.innerHTML = "";
+  if (size > 0 && size <= 100) {
+    container.innerHTML = "";
 
-  createGrid(size);
-  draw();
+    createGrid(size);
+    draw();
+  }
 });
