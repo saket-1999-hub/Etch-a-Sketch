@@ -1,10 +1,13 @@
 "use strict";
 
+const container = document.querySelector(".container");
+let boxes;
+
 function createGrid(number) {
   const containerSize = 800;
   const boxWidth = `${Math.floor(containerSize / number)}`;
   const boxHeight = `${Math.floor(containerSize / number)}`;
-  const container = document.querySelector(".container");
+
   container.style.width = `${containerSize}px`;
 
   for (let i = 0; i < number; i++) {
@@ -22,14 +25,33 @@ function createGrid(number) {
       container.appendChild(column);
     }
   }
+  boxes = document.querySelectorAll(".items");
 }
 
 createGrid(16);
 
-const boxes = document.querySelectorAll(".items");
+// const boxes = document.querySelectorAll(".items");
+const resizeBtn = document.querySelector(".btn-grid-size");
 
-boxes.forEach((box) => {
-  box.addEventListener("mouseenter", (e) => {
-    e.target.classList.add("active");
+function draw() {
+  console.log("is this code working here ?");
+
+  boxes.forEach((box) => {
+    console.log("is this code working here ?");
+    box.addEventListener("mouseenter", (e) => {
+      console.log(`this is the ${e}`);
+      e.target.classList.add("active");
+    });
   });
+}
+
+draw();
+
+resizeBtn.addEventListener("click", (e) => {
+  const size = Number(prompt("Please enter how many boxes do you want ? :"));
+
+  container.innerHTML = "";
+
+  createGrid(size);
+  draw();
 });
